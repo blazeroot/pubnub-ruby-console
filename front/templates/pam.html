@@ -1,0 +1,66 @@
+<div class="ui top-description">
+    <h2>Pubnub Access Manager</h2>
+    <a href="#" target="_blank">Learn more...</a>
+</div>
+<div class="pane-content">
+    <div class="received-messages">
+        <div class="ui header">Manage Access</div>
+        <div class="received-message-list">
+            <envelope *ngFor="#envelope of _pamEnvelopes" [envelope]="envelope"></envelope>
+        </div>
+        <div class="actions">
+            <div class="ui form">
+                <div class="four fields">
+                    <div class="field">
+                        <select [(ngModel)]="_pamOpts.action" id="pam-action" class="ui compact selection dropdown fluid">
+                            <option value="audit"> Audit</option>
+                            <option value="grant"> Grant</option>
+                            <option value="revoke">Revoke</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <input [(ngModel)]="_pamOpts.channel" type="text" placeholder="channel">
+                    </div>
+                    <div class="field">
+                        <input [(ngModel)]="_pamOpts.auth_key" type="text" placeholder="auth key">
+                    </div>
+                    <div class="field">
+                        <input [(ngModel)]="_pamOpts.ttl" type="text" placeholder="ttl">
+                    </div>
+                </div>
+                <div class="four fields">
+                    <div class="three fields">
+                        <div class="field">
+                            <div class="ui toggle checkbox">
+                                <input [(ngModel)]="_pamOpts.read" type="checkbox">
+                                <label>read</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui toggle checkbox">
+                                <input [(ngModel)]="_pamOpts.write" type="checkbox">
+                                <label>write</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <div class="ui toggle checkbox">
+                                <input [(ngModel)]="_pamOpts.manage" type="checkbox">
+                                <label>manage</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                    </div>
+                    <div class="field">
+                    </div>
+                    <div class="field">
+                        <button class="ui right floated red right labeled icon button" (click)="firePAM()">
+                            <i class="rocket icon"></i>
+                            Fire PAM Action
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

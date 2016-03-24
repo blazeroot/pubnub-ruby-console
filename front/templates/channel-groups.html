@@ -1,0 +1,55 @@
+<div class="ui top-description">
+    <h2>Channel Groups Manager</h2>
+    <a href="#" target="_blank">Learn more...</a>
+</div>
+<div class="ui pane-content">
+
+    <div class="received-messages">
+        <div class="ui header">Manage Channel Groups</div>
+        <div class="received-message-list">
+            <envelope *ngFor="#envelope of _cgActionEnvelopes" [envelope]="envelope"></envelope>
+        </div>
+        <div class="actions">
+            <div class="ui form">
+                <div class="three fields">
+                    <div class="field">
+                        <input [(ngModel)]="_cgAction.channel" type="text" placeholder="channel">
+                    </div>
+                    <div class="field">
+                        <input [(ngModel)]="_cgAction.group" type="text" placeholder="channel group">
+                    </div>
+                    <div class="field">
+                        <div class="ui buttons">
+                            <button (click)="add()" class="ui green button">Add</button>
+                            <div class="or"></div>
+                            <button (click)="remove()" class="ui red button">Remove</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="received-messages">
+        <div class="ui header">List Channel Groups</div>
+        <div class="received-message-list">
+            <envelope *ngFor="#envelope of _listingEnvelopes" [envelope]="envelope"></envelope>
+        </div>
+        <div class="actions">
+            <div class="ui form">
+                <div class="three fields">
+                    <div class="field">
+                        <input [(ngModel)]="_group" type="text" placeholder="channel group">
+                    </div>
+                    <div class="field">
+                        <button (click)="listChannels()" class="ui button fluid">List channels</button>
+                    </div>
+                    <div class="field">
+                        <button (click)="listGroups()" class="ui button fluid">List all groups</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

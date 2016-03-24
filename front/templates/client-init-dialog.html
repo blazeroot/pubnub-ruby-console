@@ -1,0 +1,29 @@
+<div class="ui raised very padded text container segment" style="margin-top: 50px;">
+    <div>
+        <img class="ui tiny image centered" src="images/pubnub-logo-red.png">
+    </div>
+    <h2 class="ui header">Provide keys to initialize your Pubnub Client</h2>
+    <form class="ui form">
+        <div class="field required">
+            <label>Subscribe Key</label>
+            <input [(ngModel)]="_pubnubClient.subscribe_key" type="text" placeholder="sub-key">
+        </div>
+        <div class="field required">
+            <label>Publish Key</label>
+            <input [(ngModel)]="_pubnubClient.publish_key" type="text" placeholder="pub-key">
+        </div>
+        <div class="field">
+            <label>Secret Key</label>
+            <input [(ngModel)]="_pubnubClient.secret_key" type="text" placeholder="sec-key">
+        </div>
+        <div class="field">
+            <label>Auth Key</label>
+            <input [(ngModel)]="_pubnubClient.auth_key" type="text" placeholder="auth-key">
+        </div>
+        <div class="field">
+            <label>UUID</label>
+            <input [(ngModel)]="_pubnubClient.uuid" type="text" placeholder="uuid">
+        </div>
+        <button (click)="initClient()" class="ui button green fluid" type="submit">initialize</button>
+    </form>
+</div>

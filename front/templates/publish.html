@@ -1,0 +1,10 @@
+<div class="actions">
+    <div class="ui action input fluid">
+        <input [(ngModel)]="to_publish.message" type="text" placeholder="message">
+        <input [(ngModel)]="to_publish.channel" type="text" placeholder="channel" class="right" style="border-radius: 0;">
+        <button class="ui red right labeled icon button" (click)="publish()">
+            <i class="send icon"></i>
+            Publish
+        </button>
+    </div>
+</div>

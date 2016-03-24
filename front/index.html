@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>Pubnub Ruby Console</title>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/tab.min.css">
+
+    <link rel="stylesheet" href="css/app.css">
+
+    <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/components/tab.min.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.1/http.dev.js"></script>
+
+    <script>
+        System.config({
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/boot')
+                .then(null, console.error.bind(console));
+    </script>
+
+</head>
+
+<body>
+<console-app>
+    <div style="background-color: #1B1C1D; height: 100%; width: 100%;">
+        <div class="ui active dimmer">
+            <div class="ui large text loader">Initializing...</div>
+        </div>
+    </div>
+</console-app>
+</body>
+
+</html>

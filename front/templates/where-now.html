@@ -1,0 +1,21 @@
+<div class="ui top-description">
+    <h2>HereNow and WhereNow</h2>
+    <a href="#" target="_blank">Learn more...</a>
+</div>
+<div class="ui pane-content">
+    <div class="received-messages">
+        <div class="ui header">Where Now</div>
+        <div class="received-message-list">
+            <envelope *ngFor="#envelope of _whereNowEnvelopes" [envelope]="envelope"></envelope>
+        </div>
+        <div class="actions">
+            <div class="ui action input fluid">
+                <input [(ngModel)]="_whereNowOpts.uuid" type="text" placeholder="uuid">
+                <button class="ui red right labeled icon button" (click)="whereNow()">
+                    <i class="search icon"></i>
+                    Find
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

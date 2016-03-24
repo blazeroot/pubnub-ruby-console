@@ -1,0 +1,154 @@
+<div class="ui action labeled input fluid received-message">
+    <div class="ui label channel">
+        {{envelope.service}}
+        {{envelope.channel}}
+    </div>
+    <input type="text" placeholder="name" disabled value="{{envelope.message}}">
+    <button class="ui blue right labeled icon button" (click)="showModal();">
+        <i class="eye icon"></i>
+        Show envelope
+    </button>
+</div>
+
+<div class="ui modal basic" id="envelope-{{envelope.id}}">
+    <i class="close icon"></i>
+    <div class="header">
+        Envelope Details
+    </div>
+    <table class="ui cell table selectable inverted padded large">
+        <thead>
+        <th>Attribute</th>
+        <th>Value</th>
+        </thead>
+        <tbody>
+        <tr>
+            <td>id</td>
+            <td>
+                <code>
+                    {{envelope.id}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.response">
+            <td>response</td>
+            <td>
+                <code>
+                    {{envelope.response}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.parsedResponse">
+            <td>parsed_response</td>
+            <td>
+                <code>
+                    {{envelope.parsedResponse}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.status">
+            <td>status</td>
+            <td>
+                <code>
+                    {{envelope.status}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.channel">
+            <td>channel</td>
+            <td>
+                <code>
+                    {{envelope.channel}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.message">
+            <td>message</td>
+            <td>
+                <code>
+                    {{envelope.message}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.payload">
+            <td>payload</td>
+            <td>
+                <code>
+                    {{envelope.payload}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.service">
+            <td>service</td>
+            <td>
+                <code>
+                    {{envelope.service}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.timetoken">
+            <td>timetoken</td>
+            <td>
+                <code>
+                    {{envelope.timetoken}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.responseMessage">
+            <td>response_message</td>
+            <td>
+                <code>
+                    {{envelope.responseMessage}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.error">
+            <td>error</td>
+            <td>
+                <code>
+                    {{envelope.error}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.action">
+            <td>action</td>
+            <td>
+                <code>
+                    {{envelope.action}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.uuid">
+            <td>uuid</td>
+            <td>
+                <code>
+                    {{envelope.uuid}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.uuids">
+            <td>uuids</td>
+            <td>
+                <code>
+                    {{envelope.uuids}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.group">
+            <td>group</td>
+            <td>
+                <code>
+                    {{envelope.group}}
+                </code>
+            </td>
+        </tr>
+        <tr *ngIf="envelope.wildcardChannel">
+            <td>wildcard_channel</td>
+            <td>
+                <code>
+                    {{envelope.wildcardChannel}}
+                </code>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

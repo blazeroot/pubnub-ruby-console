@@ -1,0 +1,136 @@
+.application {
+  display: flex;
+  height: 100vh;
+}
+
+.application .sidebar {
+    width: 210px;
+    flex-shrink: 0;
+}
+
+.application .main-pane {
+    flex-grow: 1;
+}
+
+.main-pane > .ui.tab {
+    height: 100%;
+}
+
+.main-pane > .ui.tab.active {
+    display: flex;
+}
+
+.main-pane .ui.tab > * {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.main-pane .ui.tab > * > .top-description {
+    height: 86px;
+    background-color: #d02129;
+    padding: 15px 20px;
+    color: white;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.main-pane .ui.tab > * > .top-description h2 {
+    margin-bottom: 5px;
+}
+
+.main-pane .ui.tab > * > .top-description a{
+    color: rgba(255,255,255,0.8);
+}
+
+.main-pane .ui.tab > * > .top-description a:hover{
+    color: rgba(255,255,255,1);
+}
+
+.main-pane .ui.tab * .pane-content {
+    display: flex;
+    flex-grow: 1;
+    padding: 15px;
+}
+
+.pane-content .received-messages {
+    flex-grow: 1;
+    padding-right: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.pane-content .subscribed-channels {
+    width: 400px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* that specific instance in sidebar */
+
+pubsub > .pane-content .subscribed-channels subscribe {
+    flex-grow: 1;
+}
+
+/* general subsribe */
+
+.subscribed {
+    width: 400px;
+}
+
+subscribe, .subscribed {
+    display: flex;
+    flex-direction: column;
+}
+.subscribed-channel-list {
+    flex-grow: 1;
+    overflow-y: scroll;
+    margin-bottom: 10px;
+}
+
+/***/
+
+
+.console-app-content{
+}
+
+.console-app-content .actions{
+    flex-shrink: 0;
+}
+
+.received-message-list {
+    padding: 0 10px;
+    flex-grow: 1;
+    overflow-y: scroll;
+}
+
+.subscribed-channels {
+}
+
+.received-message-list .ui.label.channel{
+    width:120px;
+}
+
+.received-message-list, .subscribed-channel{
+    margin-bottom: 10px;
+}
+
+.received-message-list input[disabled], .subscribed-channel input[disabled]{
+    font-family: monospace;
+    opacity: 0.8 !important;
+}
+
+.msg-ui{
+    display: flex !important;
+    flex-grow: 1;
+    flex-direction: column;
+}
+
+.envelope pre{
+    margin: 8px;
+}
+
+.received-message {
+    margin-bottom: 5px;
+}

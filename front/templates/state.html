@@ -1,0 +1,50 @@
+<div class="ui top-description">
+    <h2>State</h2>
+    <a href="#" target="_blank">Learn more...</a>
+</div>
+<div class="ui pane-content">
+    <div class="received-messages">
+        <div class="ui header">Manage my state</div>
+        <div class="received-message-list">
+            <envelope *ngFor="#envelope of _setStateEnvelopes" [envelope]="envelope"></envelope>
+        </div>
+        <div class="actions">
+            <div class="ui form">
+                <div class="field">
+                    <label>State</label>
+                    <textarea [(ngModel)]="_setState.state" placeholder='{channel: {attribute: value}}'></textarea>
+                </div>
+                <div class="field">
+                    <button class="ui red right labeled icon button fluid" (click)="setState()">
+                        <i class="cloud upload icon"></i>
+                        Update
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="eight wide column msg-ui">
+        <div class="ui header">Check state</div>
+        <div class="received-messages">
+            <envelope *ngFor="#envelope of _checkStateEnvelopes" [envelope]="envelope"></envelope>
+        </div>
+        <div class="actions">
+            <div class="ui form">
+                <div class="three fields">
+                    <div class="field">
+                        <input [(ngModel)]="_checkState.uuid" type="text" placeholder="uuid">
+                    </div>
+                    <div class="field">
+                        <input [(ngModel)]="_checkState.channel" type="text" placeholder="channel">
+                    </div>
+                    <div class="field">
+                        <button class="ui red right labeled icon button fluid" (click)="checkState()">
+                            <i class="cloud download icon"></i>
+                            Get State
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

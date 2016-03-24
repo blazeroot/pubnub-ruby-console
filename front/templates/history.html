@@ -1,0 +1,39 @@
+<div class="ui top-description">
+    <h2>History</h2>
+    <a href="https://www.pubnub.com/products/storage-and-playback/" target="_blank">Learn more...</a>
+</div>
+<div class="ui pane-content">
+    <div class="received-messages">
+        <div class="received-message-list">
+            <envelope *ngFor="#envelope of _historyEnvelopes" [envelope]="envelope"></envelope>
+        </div>
+        <div class="actions">
+            <div class="ui form">
+                <div class="six fields">
+                    <div class="field">
+                        <input [(ngModel)]="_historyOpts.channel" type="text" placeholder="channel">
+                    </div>
+                    <div class="field"><input [(ngModel)]="_historyOpts.count" type="number"
+                                              placeholder="count"></div>
+                    <div class="field"><input [(ngModel)]="_historyOpts.start" type="number"
+                                              placeholder="start timetoken"></div>
+                    <div class="field"><input [(ngModel)]="_historyOpts.end" type="number"
+                                              placeholder="end timetoken"></div>
+                    <div class="field">
+                        <select [(ngModel)]="_historyOpts.reverse" id="h-reverse"
+                                class="ui compact selection dropdown">
+                            <option value="1">reversed</option>
+                            <option value="0">not reversed</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <button class="ui red right labeled icon button" (click)="history()">
+                            <i class="arrow top down icon"></i>
+                            Get History
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

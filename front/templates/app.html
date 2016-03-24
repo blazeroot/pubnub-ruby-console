@@ -1,0 +1,42 @@
+<div *ngIf="pubnubClient.initialized" class="application">
+    <div class="sidebar">
+        <div>
+            <navigation [_pubnubClient]="pubnubClient"></navigation>
+        </div>
+    </div>
+    <div class="main-pane">
+        <div class="ui tab active" data-tab="pubsub">
+            <pubsub></pubsub>
+        </div>
+
+        <div class="ui tab" data-tab="presence">
+            <presence></presence>
+        </div>
+
+        <div class="ui tab" data-tab="history">
+            <history></history>
+        </div>
+
+        <div class="ui tab" data-tab="state">
+            <state></state>
+        </div>
+
+        <div class="ui tab" data-tab="channel-groups">
+            <channel-groups></channel-groups>
+        </div>
+
+        <div class="ui tab" data-tab="pam">
+            <pam></pam>
+        </div>
+
+        <div class="ui tab" data-tab="where-now">
+            <where-now></where-now>
+        </div>
+
+        <div class="ui tab" data-tab="logger">
+            <logger></logger>
+        </div>
+    </div>
+</div>
+
+<client-init-dialog *ngIf="!pubnubClient.initialized" [_pubnubClient]="pubnubClient"></client-init-dialog>

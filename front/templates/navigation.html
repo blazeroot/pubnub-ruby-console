@@ -1,0 +1,45 @@
+<div class="ui vertical inverted sticky menu fixed top" style="min-height:100%;">
+    <div class="item">
+        <div class="header">
+            <img src="images/pubnub-logo.png" style="width: 100%">
+            <div>Ruby Demo Console</div>
+        </div>
+    </div>
+    <div class="item client-info">
+        <div class="header">
+            Client
+        </div>
+        <div class="ui list">
+            <div class="key">Sub-key: <span class="value">{{_pubnubClient.subscribe_key}}</span></div>
+            <div class="key">Pub-key: <span class="value">{{_pubnubClient.publish_key}}</span></div>
+            <div class="key">Sec-key: <span class="value">{{_pubnubClient.secret_key}}</span></div>
+            <div class="key">Auth-key: <span class="value">{{_pubnubClient.auth_key}}</span></div>
+            <div class="key">uuid: <span class="value">{{_pubnubClient.uuid}}</span></div>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">
+            Actions
+        </div>
+        <div class="menu">
+            <a class="item" data-tab="pubsub">Publish & Subscribe</a>
+            <a class="item" data-tab="presence">Presence</a>
+            <a class="item" data-tab="history">History</a>
+            <a class="item" data-tab="where-now">WhereNow</a>
+            <a class="item" data-tab="state">State</a>
+            <a class="item" data-tab="channel-groups">Channel Groups</a>
+            <a class="item" data-tab="pam">Access Manager</a>
+        </div>
+    </div>
+    <div class="item">
+        <div class="header">
+            Help
+        </div>
+        <div class="menu">
+            <a class="item" target="_blank" href="https://www.pubnub.com/support/">Support</a>
+            <a class="item" target="_blank" href="https://www.pubnub.com/company/contact-us/">Contact</a>
+            <a class="item" target="_blank" href="https://www.pubnub.com/knowledge-base/">Knowledge base</a>
+        </div>
+    </div>
+
+</div>
